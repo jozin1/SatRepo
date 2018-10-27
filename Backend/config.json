@@ -1,0 +1,3 @@
+{
+  "ConnectionString": "Server=USER-KOMPUTER\\MSSQL;Database=SatDB;Trusted_Connection=True;"
+}

@@ -9,11 +9,12 @@ namespace EFCdemo
 {
     class NORADConnection
     {
-        public static readonly HttpClient client = new HttpClient();
+        //public static readonly HttpClient client = new HttpClient();
         public static string msg;
 
         public static async void RefreshAsync()
         {
+            using (HttpClient client = new HttpClient())
             using (var context = new SatContext())
             {
 
@@ -22,7 +23,7 @@ namespace EFCdemo
                 foreach(string sufix in TypesContainer.sufixes) //powtórzenie dla każdego sufiksu
                 {
                     //AcquireData(sufix).Wait();                  //zapytanie do NORAD (do konkretnego zestawu satelitów)
-                    msg = await AcquireData(sufix);
+                    msg = await AcquireData(sufix, client);
                     Console.Write(msg);
                     
                     StringReader reader = new StringReader(msg.ToString()); //StringReader umożliwia odczytywanie wiersz po wierszu
@@ -58,8 +59,10 @@ namespace EFCdemo
             }
             TypesContainer.initialization();
         }
+        
 
-        private static async Task<string> AcquireData(string sufix)         //zapytanie do NORAD
+
+        private static async Task<string> AcquireData(string sufix, HttpClient client)         //zapytanie do NORAD
         {
             client.DefaultRequestHeaders.Accept.Clear();            //tworzenie headerów zapytania
             client.DefaultRequestHeaders.Accept.Add(

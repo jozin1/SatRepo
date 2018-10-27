@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 using System.Runtime.Serialization;
 
 
@@ -12,7 +14,13 @@ namespace EFCdemo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=USER-KOMPUTER\MSSQL;Database=SatDB;Trusted_Connection=True;");
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("config.json", optional: true, reloadOnChange: true)
+                .Build();
+
+            string ConnectionString = config.GetValue("ConnectionString", "Server=USER-KOMPUTER\\MSSQL;Database=SatDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(ConnectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
