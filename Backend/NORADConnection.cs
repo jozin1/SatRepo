@@ -41,7 +41,7 @@ namespace EFCdemo
                                 if (line != null)
                                 {
                                     Line3 = line;
-                                    var Sat = new Sat(TypesContainer.ToType(sufix), Line1, Line2, Line3);
+                                    var Sat = new ClassLibrary1.Sat(TypesContainer.ToType(sufix), Line1, Line2, Line3);
                                     if (context.Sats.Any(o => o.Line1 == Line1))
                                         context.Update(Sat);
                                      context.Add(Sat);      //dodanie do listy nowego satelity lub zmiana tle

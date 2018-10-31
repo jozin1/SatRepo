@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Zeptomoby.OrbitTools.Core">
+      <HintPath>..\..\..\SYBILLA TECHNOLOGIES\OrbitTools\Core\bin\Debug\Zeptomoby.OrbitTools.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zeptomoby.OrbitTools.Orbit">
+      <HintPath>..\..\..\SYBILLA TECHNOLOGIES\OrbitTools\Orbit\bin\Debug\Zeptomoby.OrbitTools.Orbit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

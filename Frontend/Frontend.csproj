@@ -5,6 +5,15 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Sat.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Zeptomoby.OrbitTools.Core.dll" />
+    <None Remove="Zeptomoby.OrbitTools.Orbit.dll" />
+  </ItemGroup>
+
 
 
   <ItemGroup>
@@ -12,9 +21,16 @@
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
   </ItemGroup>
 
+
+
   <ItemGroup>
-    <Reference Include="..\OrbitTools\Core\bin\Debug\Zeptomoby.OrbitTools.Core.dll"/>
-    <Reference Include="..\OrbitTools\Orbit\bin\Debug\Zeptomoby.OrbitTools.Orbit.dll"/>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="..\OrbitTools\Core\bin\Debug\Zeptomoby.OrbitTools.Core.dll" />
+    <Reference Include="..\OrbitTools\Orbit\bin\Debug\Zeptomoby.OrbitTools.Orbit.dll" />
   </ItemGroup>
 
   

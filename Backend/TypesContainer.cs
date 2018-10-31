@@ -27,13 +27,13 @@ namespace EFCdemo
             return sufixes[types.IndexOf(type)];
         }
 
-        static public List<Sat> spagetti = new List<Sat>();
+        static public List<ClassLibrary1.Sat> spagetti = new List<ClassLibrary1.Sat>();
 
         static public void initialization()
         {
             using (var context = new SatContext())
             {
-                foreach (Sat sat in context.Sats)
+                foreach (ClassLibrary1.Sat sat in context.Sats)
                 {
                     spagetti.Add(sat);
                 }

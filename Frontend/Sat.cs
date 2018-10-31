@@ -32,7 +32,7 @@ namespace WebAPIClient
             TLE = new Tle(Line1, Line2, Line3);
             PlaceHolder = new Satellite(TLE);
         }
-
+        
         public void ExampleOutput()
         {
             DateTime utc = DateTime.Now;

@@ -28,10 +28,10 @@ namespace EFCdemo
         }
 
         //entities
-        public DbSet<Sat> Sats { get; set; }
+        public DbSet<ClassLibrary1.Sat> Sats { get; set; }
     }
 
-    //[DataContract(Name = "Sat")]
+    /*//[DataContract(Name = "Sat")]
     public class Sat
     {
         //[DataMember]
@@ -56,5 +56,5 @@ namespace EFCdemo
         public Sat()
         {
         }
-    }
+    }*/
 }

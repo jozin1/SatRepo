@@ -20,7 +20,7 @@ namespace Backend.Controllers
             using (var context = new SatContext())
             {
                 string response = null;
-                DataContractJsonSerializer Serializer = new DataContractJsonSerializer(typeof(List<Sat>));
+                DataContractJsonSerializer Serializer = new DataContractJsonSerializer(typeof(List<ClassLibrary1.Sat>));
                 MemoryStream stream = new MemoryStream();
                 Serializer.WriteObject(stream, TypesContainer.spagetti);  //tu trzeba wstawić coś typu List<Sat> a nie DbSet<Sat>!
                 stream.Position = 0;
